@@ -1,0 +1,7 @@
+load(":defs.bzl", "pssparser_dependencies")
+pssparser_dependencies()
+
+load("@rules_antlr//antlr:lang.bzl", "PYTHON")
+load("@rules_antlr//antlr:repositories.bzl", "rules_antlr_dependencies")
+
+rules_antlr_dependencies("4.8", PYTHON)

@@ -107,9 +107,9 @@ from antlr4.CommonTokenStream import CommonTokenStream
 from antlr4.error.ErrorListener import ErrorListener
 from antlr4.tree.Tree import TerminalNodeImpl
 
-from pssparser.antlr_gen.PSSLexer import PSSLexer
-from pssparser.antlr_gen.PSSParser import PSSParser
-from pssparser.antlr_gen.PSSVisitor import PSSVisitor
+from antlr_gen.PSSLexer import PSSLexer
+from antlr_gen.PSSParser import PSSParser
+from antlr_gen.PSSVisitor import PSSVisitor
 from pssparser.model.action_type import ActionType
 from pssparser.model.attr_decl_stmt import AttrFlags
 from pssparser.model.buffer_type import BufferType

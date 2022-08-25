@@ -21,6 +21,7 @@ Created on Feb 16, 2020
 
 @author: ballance
 '''
+import unittest
 from unittest.case import TestCase
 import pss_spec_examples
 import sys
@@ -1083,3 +1084,5 @@ class TestSpecExamples(TestCase):
             pss_spec_examples.spec_ex_243_compile_assert,
             "243_compile_assert.pss");
 
+if __name__ == '__main__':
+    unittest.main()

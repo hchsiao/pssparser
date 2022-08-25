@@ -1,0 +1,33 @@
+load("@rules_antlr//antlr:antlr4.bzl", "antlr")
+
+py_library(
+    name = "pssparser",
+    srcs = glob(["src/pssparser/**/*.py"]),
+    imports = ["src"],
+    visibility = ["//visibility:public"],
+)
+
+antlr(
+    name = "generated",
+    srcs = ["grammar/sav/PSS.g4"],
+    imports = glob(["grammar/sav/*.g4"]),
+    language = "Python3",
+    no_visitor = False,
+    py_import_prefix = ["antlr_gen"],
+)
+
+py_library(
+    name = "lib",
+    srcs = [":generated"],
+    visibility = ["//visibility:public"],
+)
+
+py_binary(
+    name = "hello",
+    srcs = ["hello.py"],
+    deps = [
+        ":lib",
+        ":pssparser",
+        "@antlr4_runtimes//:python3",
+    ],
+)

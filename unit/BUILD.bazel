@@ -1,0 +1,10 @@
+py_test(
+    name = "spec_test",
+    srcs = ["test_spec_examples.py"],
+    main = "test_spec_examples.py",
+    deps = [
+        "//:lib",
+        "//:pssparser",
+        "@antlr4_runtimes//:python3",
+    ],
+)
